@@ -1,0 +1,39 @@
+2026-03-22 14:31:52,083 INFO ------------------------------------------------------------
+2026-03-22 14:31:52,083 INFO  GitHub Bronze ingestion started | run=20260322_123152
+2026-03-22 14:31:52,083 INFO ------------------------------------------------------------
+2026-03-22 14:31:52,083 INFO [LOG] Processing: pandas
+2026-03-22 14:31:52,731 INFO Saved -> data\bronze\github\repos\pandas_20260322_123152.json
+2026-03-22 14:31:53,319 INFO Saved -> data\bronze\github\readmes\pandas_20260322_123152.json
+2026-03-22 14:31:53,958 INFO Saved -> data\bronze\github\contributors\pandas_20260322_123152.json
+2026-03-22 14:31:54,959 INFO [LOG] Processing: requests
+2026-03-22 14:31:55,652 INFO Saved -> data\bronze\github\repos\requests_20260322_123152.json
+2026-03-22 14:31:56,248 INFO Saved -> data\bronze\github\readmes\requests_20260322_123152.json
+2026-03-22 14:31:56,896 INFO Saved -> data\bronze\github\contributors\requests_20260322_123152.json
+2026-03-22 14:31:57,897 INFO [LOG] Processing: fastapi
+2026-03-22 14:31:59,078 INFO Saved -> data\bronze\github\repos\fastapi_20260322_123152.json
+2026-03-22 14:31:59,954 INFO Saved -> data\bronze\github\readmes\fastapi_20260322_123152.json
+2026-03-22 14:32:01,106 INFO Saved -> data\bronze\github\contributors\fastapi_20260322_123152.json
+2026-03-22 14:32:02,108 INFO [LOG] Processing: numpy
+2026-03-22 14:32:02,743 INFO Saved -> data\bronze\github\repos\numpy_20260322_123152.json
+2026-03-22 14:32:03,334 INFO Saved -> data\bronze\github\readmes\numpy_20260322_123152.json
+2026-03-22 14:32:04,082 INFO Saved -> data\bronze\github\contributors\numpy_20260322_123152.json
+2026-03-22 14:32:05,083 INFO [LOG] Processing: flask
+2026-03-22 14:32:05,726 INFO Saved -> data\bronze\github\repos\flask_20260322_123152.json
+2026-03-22 14:32:06,255 INFO Saved -> data\bronze\github\readmes\flask_20260322_123152.json
+2026-03-22 14:32:06,912 INFO Saved -> data\bronze\github\contributors\flask_20260322_123152.json
+2026-03-22 14:32:07,914 INFO [LOG] Processing: django
+2026-03-22 14:32:08,550 INFO Saved -> data\bronze\github\repos\django_20260322_123152.json
+2026-03-22 14:32:09,091 INFO Saved -> data\bronze\github\readmes\django_20260322_123152.json
+2026-03-22 14:32:09,700 INFO Saved -> data\bronze\github\contributors\django_20260322_123152.json
+2026-03-22 14:32:10,702 INFO [LOG] Processing: scikit-learn
+2026-03-22 14:32:11,347 INFO Saved -> data\bronze\github\repos\scikit-learn_20260322_123152.json
+2026-03-22 14:32:11,894 INFO Saved -> data\bronze\github\readmes\scikit-learn_20260322_123152.json
+2026-03-22 14:32:12,844 INFO Saved -> data\bronze\github\contributors\scikit-learn_20260322_123152.json
+2026-03-22 14:32:13,846 INFO [LOG] Processing: pytorch
+2026-03-22 14:32:14,476 INFO Saved -> data\bronze\github\repos\pytorch_20260322_123152.json
+2026-03-22 14:32:15,090 INFO Saved -> data\bronze\github\readmes\pytorch_20260322_123152.json
+2026-03-22 14:32:15,723 INFO Saved -> data\bronze\github\contributors\pytorch_20260322_123152.json
+2026-03-22 14:32:17,580 INFO Saved -> data\bronze\github\events\events_20260322_123152.json
+2026-03-22 14:32:17,581 INFO ------------------------------------------------------------
+2026-03-22 14:32:17,581 INFO Run complete | success=8 errors=0
+2026-03-22 14:32:17,581 INFO ------------------------------------------------------------
