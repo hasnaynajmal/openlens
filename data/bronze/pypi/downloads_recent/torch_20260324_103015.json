@@ -1,0 +1,15 @@
+{
+  "_ingested_at": "2026-03-24T10:31:03.818231+00:00",
+  "_source": "pypistats_api",
+  "_pypi_package": "torch",
+  "_endpoint": "https://pypistats.org/api/packages/torch/recent",
+  "data": {
+    "data": {
+      "last_day": 3384845,
+      "last_month": 79850370,
+      "last_week": 20695788
+    },
+    "package": "torch",
+    "type": "recent_downloads"
+  }
+}
