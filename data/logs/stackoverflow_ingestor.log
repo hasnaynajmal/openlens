@@ -1,0 +1,76 @@
+2026-03-23 17:42:19,399 INFO Stack Overflow Bronze ingestion started | run=20260323_154219
+2026-03-23 17:42:19,399 INFO [LOG] Processing: pandas
+2026-03-23 17:42:22,016 INFO Saved -> data\bronze\stackoverflow\tag_info\pandas_20260323_154219.json
+2026-03-23 17:42:24,720 INFO [pandas] questions page 1: 100 items
+2026-03-23 17:42:27,346 INFO [pandas] questions page 2: 100 items
+2026-03-23 17:42:30,007 INFO [pandas] questions page 3: 100 items
+2026-03-23 17:42:30,042 INFO Saved -> data\bronze\stackoverflow\questions\pandas_20260323_154219.json
+2026-03-23 17:42:32,799 INFO [pandas] answers page 1: 100 items
+2026-03-23 17:42:35,543 INFO [pandas] answers page 2: 100 items
+2026-03-23 17:42:35,554 INFO Saved -> data\bronze\stackoverflow\answers\pandas_20260323_154219.json
+2026-03-23 17:42:38,558 INFO [LOG] Processing: requests
+2026-03-23 17:42:41,161 INFO Saved -> data\bronze\stackoverflow\tag_info\requests_20260323_154219.json
+2026-03-23 17:42:43,929 INFO [requests] questions page 1: 100 items
+2026-03-23 17:42:46,591 INFO [requests] questions page 2: 100 items
+2026-03-23 17:42:49,251 INFO [requests] questions page 3: 100 items
+2026-03-23 17:42:49,266 INFO Saved -> data\bronze\stackoverflow\questions\requests_20260323_154219.json
+2026-03-23 17:42:51,831 INFO [requests] answers page 1: 100 items
+2026-03-23 17:42:54,385 INFO [requests] answers page 2: 100 items
+2026-03-23 17:42:54,403 INFO Saved -> data\bronze\stackoverflow\answers\requests_20260323_154219.json
+2026-03-23 17:42:57,409 INFO [LOG] Processing: fastapi
+2026-03-23 17:43:00,340 INFO Saved -> data\bronze\stackoverflow\tag_info\fastapi_20260323_154219.json
+2026-03-23 17:43:03,430 INFO [fastapi] questions page 1: 100 items
+2026-03-23 17:43:06,653 INFO [fastapi] questions page 2: 100 items
+2026-03-23 17:43:09,984 INFO [fastapi] questions page 3: 100 items
+2026-03-23 17:43:10,079 INFO Saved -> data\bronze\stackoverflow\questions\fastapi_20260323_154219.json
+2026-03-23 17:43:13,151 INFO [fastapi] answers page 1: 100 items
+2026-03-23 17:43:16,374 INFO [fastapi] answers page 2: 100 items
+2026-03-23 17:43:16,448 INFO Saved -> data\bronze\stackoverflow\answers\fastapi_20260323_154219.json
+2026-03-23 17:43:19,465 INFO [LOG] Processing: numpy
+2026-03-23 17:43:22,609 INFO Saved -> data\bronze\stackoverflow\tag_info\numpy_20260323_154219.json
+2026-03-23 17:43:26,213 INFO [numpy] questions page 1: 100 items
+2026-03-23 17:43:29,820 INFO [numpy] questions page 2: 100 items
+2026-03-23 17:43:32,947 INFO [numpy] questions page 3: 100 items
+2026-03-23 17:43:32,996 INFO Saved -> data\bronze\stackoverflow\questions\numpy_20260323_154219.json
+2026-03-23 17:43:36,054 INFO [numpy] answers page 1: 100 items
+2026-03-23 17:43:39,249 INFO [numpy] answers page 2: 100 items
+2026-03-23 17:43:39,292 INFO Saved -> data\bronze\stackoverflow\answers\numpy_20260323_154219.json
+2026-03-23 17:43:42,304 INFO [LOG] Processing: flask
+2026-03-23 17:43:45,217 INFO Saved -> data\bronze\stackoverflow\tag_info\flask_20260323_154219.json
+2026-03-23 17:43:48,452 INFO [flask] questions page 1: 100 items
+2026-03-23 17:43:52,109 INFO [flask] questions page 2: 100 items
+2026-03-23 17:43:55,609 INFO [flask] questions page 3: 100 items
+2026-03-23 17:43:55,668 INFO Saved -> data\bronze\stackoverflow\questions\flask_20260323_154219.json
+2026-03-23 17:43:58,792 INFO [flask] answers page 1: 100 items
+2026-03-23 17:44:01,768 INFO [flask] answers page 2: 100 items
+2026-03-23 17:44:01,818 INFO Saved -> data\bronze\stackoverflow\answers\flask_20260323_154219.json
+2026-03-23 17:44:04,821 INFO [LOG] Processing: django
+2026-03-23 17:44:08,000 INFO Saved -> data\bronze\stackoverflow\tag_info\django_20260323_154219.json
+2026-03-23 17:44:11,181 INFO [django] questions page 1: 100 items
+2026-03-23 17:44:14,429 INFO [django] questions page 2: 100 items
+2026-03-23 17:44:17,565 INFO [django] questions page 3: 100 items
+2026-03-23 17:44:17,622 INFO Saved -> data\bronze\stackoverflow\questions\django_20260323_154219.json
+2026-03-23 17:44:22,460 INFO [django] answers page 1: 100 items
+2026-03-23 17:44:25,526 INFO [django] answers page 2: 100 items
+2026-03-23 17:44:25,607 INFO Saved -> data\bronze\stackoverflow\answers\django_20260323_154219.json
+2026-03-23 17:44:28,613 INFO [LOG] Processing: scikit-learn
+2026-03-23 17:44:32,151 INFO Saved -> data\bronze\stackoverflow\tag_info\scikit-learn_20260323_154219.json
+2026-03-23 17:44:35,421 INFO [scikit-learn] questions page 1: 100 items
+2026-03-23 17:44:39,120 INFO [scikit-learn] questions page 2: 100 items
+2026-03-23 17:44:42,216 INFO [scikit-learn] questions page 3: 100 items
+2026-03-23 17:44:42,284 INFO Saved -> data\bronze\stackoverflow\questions\scikit-learn_20260323_154219.json
+2026-03-23 17:44:45,338 INFO [scikit-learn] answers page 1: 100 items
+2026-03-23 17:44:48,054 INFO [scikit-learn] answers page 2: 100 items
+2026-03-23 17:44:48,098 INFO Saved -> data\bronze\stackoverflow\answers\scikit-learn_20260323_154219.json
+2026-03-23 17:44:51,119 INFO [LOG] Processing: pytorch
+2026-03-23 17:44:53,883 INFO Saved -> data\bronze\stackoverflow\tag_info\pytorch_20260323_154219.json
+2026-03-23 17:44:58,199 INFO [pytorch] questions page 1: 100 items
+2026-03-23 17:45:01,862 INFO [pytorch] questions page 2: 100 items
+2026-03-23 17:45:04,961 INFO [pytorch] questions page 3: 100 items
+2026-03-23 17:45:05,039 INFO Saved -> data\bronze\stackoverflow\questions\pytorch_20260323_154219.json
+2026-03-23 17:45:08,681 INFO [pytorch] answers page 1: 100 items
+2026-03-23 17:45:11,623 INFO [pytorch] answers page 2: 100 items
+2026-03-23 17:45:11,658 INFO Saved -> data\bronze\stackoverflow\answers\pytorch_20260323_154219.json
+2026-03-23 17:45:14,735 INFO --------------------------------------------------------------------
+2026-03-23 17:45:14,745 INFO Run complete | success=8 errors=0
+2026-03-23 17:45:14,763 INFO ---------------------------------------------------------------------
