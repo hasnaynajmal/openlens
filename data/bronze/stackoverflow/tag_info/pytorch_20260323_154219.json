@@ -1,0 +1,21 @@
+{
+  "_ingested_at": "2026-03-23T15:44:53.877449+00:00",
+  "_source": "stackexchange_api_v2.3",
+  "_pypi_package": "pytorch",
+  "_so_tag": "pytorch",
+  "_endpoint": "https://api.stackexchange.com/2.3/tags/pytorch/info",
+  "data": {
+    "items": [
+      {
+        "has_synonyms": false,
+        "is_moderator_only": false,
+        "is_required": false,
+        "count": 24374,
+        "name": "pytorch"
+      }
+    ],
+    "has_more": false,
+    "quota_max": 10000,
+    "quota_remaining": 9936
+  }
+}
