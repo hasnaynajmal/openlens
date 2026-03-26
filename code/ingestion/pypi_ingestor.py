@@ -86,7 +86,7 @@ def _save(subfolder: str, filename: str, data: dict):
 
 # Ingestion functions
 
-def ingest_package_metadata(pkg: dict, date_stamp: str):
+def ingest_package_metadata(pkg: dict):
     """
     Fetch package metadata from pypi.org/pypi/{package}/json.
 
@@ -108,7 +108,7 @@ def ingest_package_metadata(pkg: dict, date_stamp: str):
             "data":          raw,
         }
 
-        filename = f"{pypi}_{date_stamp}.json"
+        filename = f"{pypi}.json"
         filepath = _save("metadata", filename, envelope)
 
         info = raw.get("info", {})
@@ -129,7 +129,7 @@ def ingest_package_metadata(pkg: dict, date_stamp: str):
         log_event("package_metadata", pypi, "error", {"error": str(e)})
 
 
-def ingest_download_stats_recent(pkg: dict, date_stamp: str):
+def ingest_download_stats_recent(pkg: dict):
     """
     Fetch recent download counts from pypistats.org.
     Returns downloads for last day, last week, and last month.
@@ -148,7 +148,7 @@ def ingest_download_stats_recent(pkg: dict, date_stamp: str):
             "data":          raw,
         }
 
-        filename = f"{pypi}_{date_stamp}.json"
+        filename = f"{pypi}.json"
         filepath = _save("downloads_recent", filename, envelope)
 
         data = raw.get("data", {})
@@ -164,7 +164,7 @@ def ingest_download_stats_recent(pkg: dict, date_stamp: str):
         log_event("downloads_recent", pypi, "error", {"error": str(e)})
 
 
-def ingest_download_stats_overall(pkg: dict, date_stamp: str):
+def ingest_download_stats_overall(pkg: dict):
     """
     Fetch overall download history from pypistats.org.
     Returns total all-time downloads broken down with and without mirrors.
@@ -184,7 +184,7 @@ def ingest_download_stats_overall(pkg: dict, date_stamp: str):
             "data":          raw,
         }
 
-        filename = f"{pypi}_{date_stamp}.json"
+        filename = f"{pypi}.json"
         filepath = _save("downloads_overall", filename, envelope)
 
         # Sum total downloads across all rows in the response
@@ -206,8 +206,8 @@ def ingest_download_stats_overall(pkg: dict, date_stamp: str):
 # Main
 
 def run():
-    date_stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-    logger.info(f"PyPI Bronze ingestion started | run={date_stamp}")
+    run_ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    logger.info(f"PyPI Bronze ingestion started | run={run_ts}")
 
     stats = {"success": 0, "error": 0}
 
@@ -216,9 +216,9 @@ def run():
         logger.info(f"--- Processing: {pypi} ---")
 
         try:
-            ingest_package_metadata(pkg, date_stamp)
-            ingest_download_stats_recent(pkg, date_stamp)
-            ingest_download_stats_overall(pkg, date_stamp)
+            ingest_package_metadata(pkg)
+            ingest_download_stats_recent(pkg)
+            ingest_download_stats_overall(pkg)
             stats["success"] += 1
         except Exception as e:
             logger.error(f"[{pypi}] unexpected error: {e}")

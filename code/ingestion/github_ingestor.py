@@ -84,7 +84,7 @@ def _get(url: str, params: dict = None) -> requests.Response:
 # Save helper
 
 def _save(subfolder: str, filename: str, data: dict):
-    """Dump raw API response as JSON to the Bronze layer, never overwriting old runs."""
+    """Dump raw API response as JSON to the Bronze layer, overwriting previous run."""
     dest = BRONZE_PATH / subfolder
     dest.mkdir(parents=True, exist_ok=True)
     filepath = dest / filename
@@ -96,7 +96,7 @@ def _save(subfolder: str, filename: str, data: dict):
 
 # Ingestion functions
 
-def ingest_repo_metadata(pkg: dict, date_stamp: str) -> dict | None:
+def ingest_repo_metadata(pkg: dict) -> dict | None:
     """
     Fetch repository metadata (stars, forks, language, license,
     open issues, contributor count, description, topics, created_at).
@@ -121,7 +121,7 @@ def ingest_repo_metadata(pkg: dict, date_stamp: str) -> dict | None:
             "data":          raw,
         }
 
-        filename = f"{pypi}_{date_stamp}.json"
+        filename = f"{pypi}.json"
         filepath = _save("repos", filename, envelope)
 
         log_event("repo_metadata", pypi, "success", {
@@ -139,7 +139,7 @@ def ingest_repo_metadata(pkg: dict, date_stamp: str) -> dict | None:
         return None
 
 
-def ingest_readme(pkg: dict, date_stamp: str):
+def ingest_readme(pkg: dict):
     """
     Fetch the raw README as plain text.
 
@@ -169,7 +169,7 @@ def ingest_readme(pkg: dict, date_stamp: str):
             "readme_text":   readme_text,   # decoded for convenience
         }
 
-        filename = f"{pypi}_{date_stamp}.json"
+        filename = f"{pypi}.json"
         filepath = _save("readmes", filename, envelope)
 
         log_event("readme", pypi, "success", {
@@ -183,7 +183,7 @@ def ingest_readme(pkg: dict, date_stamp: str):
         log_event("readme", pypi, "error", {"error": str(e)})
 
 
-def ingest_events(date_stamp: str, per_page: int = 100):
+def ingest_events(per_page: int = 100):
     """
     Poll GitHub's public Events API once.
 
@@ -208,7 +208,7 @@ def ingest_events(date_stamp: str, per_page: int = 100):
             "events":       events,
         }
 
-        filename = f"events_{date_stamp}.json"
+        filename = "events.json"
         filepath = _save("events", filename, envelope)
 
         # Count event types for the structured log
@@ -228,7 +228,7 @@ def ingest_events(date_stamp: str, per_page: int = 100):
         log_event("events_poll", "global", "error", {"error": str(e)})
 
 
-def ingest_contributors(pkg: dict, date_stamp: str):
+def ingest_contributors(pkg: dict):
     """
     Fetch top-100 contributors for a repo.
     Stored separately from repo metadata, contributor data changes
@@ -250,7 +250,7 @@ def ingest_contributors(pkg: dict, date_stamp: str):
             "contributors":  contributors,
         }
 
-        filename = f"{pypi}_{date_stamp}.json"
+        filename = f"{pypi}.json"
         filepath = _save("contributors", filename, envelope)
 
         log_event("contributors", pypi, "success", {
@@ -266,9 +266,9 @@ def ingest_contributors(pkg: dict, date_stamp: str):
 # Main
 
 def run():
-    date_stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    run_ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
     logging.info("-" * 60)
-    logger.info(f" GitHub Bronze ingestion started | run={date_stamp}")
+    logger.info(f" GitHub Bronze ingestion started | run={run_ts}")
     logging.info("-" * 60)
 
     stats = {"success": 0, "error": 0}
@@ -277,20 +277,20 @@ def run():
         pypi = pkg["pypi"]
         logger.info(f"[LOG] Processing: {pypi}")
 
-        result = ingest_repo_metadata(pkg, date_stamp)
+        result = ingest_repo_metadata(pkg)
         if result:
             stats["success"] += 1
         else:
             stats["error"] += 1
 
-        ingest_readme(pkg, date_stamp)
-        ingest_contributors(pkg, date_stamp)
+        ingest_readme(pkg)
+        ingest_contributors(pkg)
 
         # Be polite to the API between packages
         time.sleep(1)
 
     # One events snapshot per full run
-    ingest_events(date_stamp)
+    ingest_events()
 
     logging.info("-" * 60)
     logger.info(
