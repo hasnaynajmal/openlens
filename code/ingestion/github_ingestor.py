@@ -24,7 +24,7 @@ TARGET_PACKAGES = [
     {"pypi": "flask",        "github": "pallets/flask",                  "so_tag": "flask"},
     {"pypi": "django",       "github": "django/django",                  "so_tag": "django"},
     {"pypi": "scikit-learn", "github": "scikit-learn/scikit-learn",      "so_tag": "scikit-learn"},
-    {"pypi": "pytorch",      "github": "pytorch/pytorch",                "so_tag": "pytorch"},
+    {"pypi": "torch",        "github": "pytorch/pytorch",                "so_tag": "pytorch"},
 ]
 
 # Logging setup
