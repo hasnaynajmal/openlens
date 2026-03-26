@@ -28,7 +28,7 @@ TARGET_PACKAGES = [
     {"pypi": "flask",        "github": "pallets/flask",             "so_tag": "flask"},
     {"pypi": "django",       "github": "django/django",             "so_tag": "django"},
     {"pypi": "scikit-learn", "github": "scikit-learn/scikit-learn", "so_tag": "scikit-learn"},
-    {"pypi": "pytorch",      "github": "pytorch/pytorch",           "so_tag": "pytorch"},
+    {"pypi": "torch",        "github": "pytorch/pytorch",           "so_tag": "pytorch"},
 ]
 
 # Logging setup
@@ -105,6 +105,7 @@ def ingest_questions(pkg: dict, date_stamp: str, pages: int = 3):
     Fetch questions tagged with this package's SO tag.
     Fetches up to 300 questions sorted by votes.
     The body field contains raw HTML — this is the unstructured data component.
+    Returns the list of question IDs so answers can be fetched for them.
     """
     pypi   = pkg["pypi"]
     so_tag = pkg["so_tag"]
@@ -136,6 +137,8 @@ def ingest_questions(pkg: dict, date_stamp: str, pages: int = 3):
             log_event("questions", pypi, "error", {"page": page, "error": str(e)})
             break
 
+    question_ids = [q["question_id"] for q in all_questions if "question_id" in q]
+
     if all_questions:
         envelope = {
             "_ingested_at":   datetime.now(timezone.utc).isoformat(),
@@ -159,51 +162,72 @@ def ingest_questions(pkg: dict, date_stamp: str, pages: int = 3):
             "unanswered_count": len(all_questions) - answered,
         })
 
+    return question_ids
 
-def ingest_answers(pkg: dict, date_stamp: str, pages: int = 2):
+
+def ingest_answers(pkg: dict, date_stamp: str, question_ids: list,
+                   max_pages_per_batch: int = 2):
     """
-    Fetch answers for this tag sorted by votes.
+    Fetch answers for specific questions using /questions/{ids}/answers.
+    The /answers endpoint ignores the ``tagged`` param, so we must provide
+    explicit question IDs to get tag-relevant answers.
     Answer bodies are the primary input for sentiment analysis later.
     """
     pypi   = pkg["pypi"]
     so_tag = pkg["so_tag"]
 
+    if not question_ids:
+        logger.warning(f"[{pypi}] No question IDs — skipping answer ingestion.")
+        return
+
     all_answers = []
-    has_more    = True
-    page        = 1
+    batch_size  = 100  # SE API max per vectorised request
 
-    while has_more and page <= pages:
-        try:
-            data = _get("answers", params={
-                "tagged":   so_tag,
-                "sort":     "votes",
-                "order":    "desc",
-                "pagesize": 100,
-                "page":     page,
-                "filter": "withbody",
-            })
+    for batch_start in range(0, len(question_ids), batch_size):
+        batch    = question_ids[batch_start:batch_start + batch_size]
+        ids_str  = ";".join(str(qid) for qid in batch)
+        batch_no = batch_start // batch_size + 1
 
-            answers  = data.get("items", [])
-            all_answers.extend(answers)
-            has_more = data.get("has_more", False)
+        has_more = True
+        page     = 1
 
-            logger.info(f"[{pypi}] answers page {page}: {len(answers)} items")
-            page += 1
+        while has_more and page <= max_pages_per_batch:
+            try:
+                data = _get(f"questions/{ids_str}/answers", params={
+                    "sort":     "votes",
+                    "order":    "desc",
+                    "pagesize": 100,
+                    "page":     page,
+                    "filter":   "withbody",
+                })
 
-        except requests.HTTPError as e:
-            logger.error(f"[{pypi}] answers page {page} failed: {e}")
-            log_event("answers", pypi, "error", {"page": page, "error": str(e)})
-            break
+                answers = data.get("items", [])
+                all_answers.extend(answers)
+                has_more = data.get("has_more", False)
+
+                logger.info(
+                    f"[{pypi}] answers batch {batch_no} page {page}: "
+                    f"{len(answers)} items"
+                )
+                page += 1
+
+            except requests.HTTPError as e:
+                logger.error(f"[{pypi}] answers batch {batch_no} page {page} failed: {e}")
+                log_event("answers", pypi, "error", {
+                    "batch": batch_no, "page": page, "error": str(e),
+                })
+                break
 
     if all_answers:
         envelope = {
-            "_ingested_at":   datetime.now(timezone.utc).isoformat(),
-            "_source":        "stackexchange_api_v2.3",
-            "_pypi_package":  pypi,
-            "_so_tag":        so_tag,
-            "_endpoint":      f"{BASE_URL}/answers",
-            "_total_fetched": len(all_answers),
-            "answers":        all_answers,
+            "_ingested_at":        datetime.now(timezone.utc).isoformat(),
+            "_source":             "stackexchange_api_v2.3",
+            "_pypi_package":       pypi,
+            "_so_tag":             so_tag,
+            "_endpoint":           f"{BASE_URL}/questions/{{ids}}/answers",
+            "_total_fetched":      len(all_answers),
+            "_question_ids_count": len(question_ids),
+            "answers":             all_answers,
         }
 
         filename = f"{pypi}_{date_stamp}.json"
@@ -270,8 +294,8 @@ def run():
 
         try:
             ingest_tag_info(pkg, date_stamp)
-            ingest_questions(pkg, date_stamp, pages=3)
-            ingest_answers(pkg, date_stamp, pages=2)
+            question_ids = ingest_questions(pkg, date_stamp, pages=3)
+            ingest_answers(pkg, date_stamp, question_ids=question_ids)
             stats["success"] += 1
         except Exception as e:
             logger.error(f"[{pypi}] unexpected error: {e}")
