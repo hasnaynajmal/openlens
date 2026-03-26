@@ -1,0 +1,21 @@
+{
+  "_ingested_at": "2026-03-26T16:25:21.893273+00:00",
+  "_source": "stackexchange_api_v2.3",
+  "_pypi_package": "pandas",
+  "_so_tag": "pandas",
+  "_endpoint": "https://api.stackexchange.com/2.3/tags/pandas/info",
+  "data": {
+    "items": [
+      {
+        "has_synonyms": true,
+        "is_moderator_only": false,
+        "is_required": false,
+        "count": 289784,
+        "name": "pandas"
+      }
+    ],
+    "has_more": false,
+    "quota_max": 10000,
+    "quota_remaining": 9999
+  }
+}

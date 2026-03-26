@@ -37,3 +37,54 @@
 2026-03-22 14:32:17,581 INFO ------------------------------------------------------------
 2026-03-22 14:32:17,581 INFO Run complete | success=8 errors=0
 2026-03-22 14:32:17,581 INFO ------------------------------------------------------------
+2026-03-26 18:30:13,971 INFO ------------------------------------------------------------
+2026-03-26 18:30:13,975 INFO  GitHub Bronze ingestion started | run=20260326_163013
+2026-03-26 18:30:13,975 INFO ------------------------------------------------------------
+2026-03-26 18:30:13,975 INFO [LOG] Processing: pandas
+2026-03-26 18:30:14,353 WARNING Rate limit low (1 left). Sleeping 5s.
+2026-03-26 18:30:19,354 ERROR [pandas] repo metadata failed: 401 Client Error: Unauthorized for url: https://api.github.com/repos/pandas-dev/pandas
+2026-03-26 18:30:19,897 WARNING Rate limit low (1 left). Sleeping 5s.
+2026-03-26 18:30:24,898 ERROR [pandas] README fetch failed: 401 Client Error: Unauthorized for url: https://api.github.com/repos/pandas-dev/pandas/readme
+2026-03-26 18:30:25,276 WARNING Rate limit low (1 left). Sleeping 5s.
+2026-03-26 18:30:30,278 ERROR [pandas] contributors failed: 401 Client Error: Unauthorized for url: https://api.github.com/repos/pandas-dev/pandas/contributors?per_page=100&anon=false
+2026-03-26 18:30:31,282 INFO [LOG] Processing: requests
+2026-03-26 18:30:32,010 WARNING Rate limit low (1 left). Sleeping 5s.
+2026-03-26 18:35:06,717 INFO ------------------------------------------------------------
+2026-03-26 18:35:06,717 INFO  GitHub Bronze ingestion started | run=20260326_163506
+2026-03-26 18:35:06,717 INFO ------------------------------------------------------------
+2026-03-26 18:35:06,717 INFO [LOG] Processing: pandas
+2026-03-26 18:35:07,441 INFO Saved -> data\bronze\github\repos\pandas_20260326_163506.json
+2026-03-26 18:35:07,951 INFO Saved -> data\bronze\github\readmes\pandas_20260326_163506.json
+2026-03-26 18:35:08,679 INFO Saved -> data\bronze\github\contributors\pandas_20260326_163506.json
+2026-03-26 18:35:09,683 INFO [LOG] Processing: requests
+2026-03-26 18:35:10,310 INFO Saved -> data\bronze\github\repos\requests_20260326_163506.json
+2026-03-26 18:35:10,887 INFO Saved -> data\bronze\github\readmes\requests_20260326_163506.json
+2026-03-26 18:35:11,612 INFO Saved -> data\bronze\github\contributors\requests_20260326_163506.json
+2026-03-26 18:35:12,614 INFO [LOG] Processing: fastapi
+2026-03-26 18:35:13,412 INFO Saved -> data\bronze\github\repos\fastapi_20260326_163506.json
+2026-03-26 18:35:14,279 INFO Saved -> data\bronze\github\readmes\fastapi_20260326_163506.json
+2026-03-26 18:35:15,357 INFO Saved -> data\bronze\github\contributors\fastapi_20260326_163506.json
+2026-03-26 18:35:16,360 INFO [LOG] Processing: numpy
+2026-03-26 18:35:16,970 INFO Saved -> data\bronze\github\repos\numpy_20260326_163506.json
+2026-03-26 18:35:17,483 INFO Saved -> data\bronze\github\readmes\numpy_20260326_163506.json
+2026-03-26 18:35:18,145 INFO Saved -> data\bronze\github\contributors\numpy_20260326_163506.json
+2026-03-26 18:35:19,148 INFO [LOG] Processing: flask
+2026-03-26 18:35:19,939 INFO Saved -> data\bronze\github\repos\flask_20260326_163506.json
+2026-03-26 18:35:20,512 INFO Saved -> data\bronze\github\readmes\flask_20260326_163506.json
+2026-03-26 18:35:21,451 INFO Saved -> data\bronze\github\contributors\flask_20260326_163506.json
+2026-03-26 18:35:22,455 INFO [LOG] Processing: django
+2026-03-26 18:35:23,006 INFO Saved -> data\bronze\github\repos\django_20260326_163506.json
+2026-03-26 18:35:23,561 INFO Saved -> data\bronze\github\readmes\django_20260326_163506.json
+2026-03-26 18:35:24,183 INFO Saved -> data\bronze\github\contributors\django_20260326_163506.json
+2026-03-26 18:35:25,184 INFO [LOG] Processing: scikit-learn
+2026-03-26 18:35:25,816 INFO Saved -> data\bronze\github\repos\scikit-learn_20260326_163506.json
+2026-03-26 18:35:26,331 INFO Saved -> data\bronze\github\readmes\scikit-learn_20260326_163506.json
+2026-03-26 18:35:26,997 INFO Saved -> data\bronze\github\contributors\scikit-learn_20260326_163506.json
+2026-03-26 18:35:28,000 INFO [LOG] Processing: torch
+2026-03-26 18:35:28,638 INFO Saved -> data\bronze\github\repos\torch_20260326_163506.json
+2026-03-26 18:35:29,232 INFO Saved -> data\bronze\github\readmes\torch_20260326_163506.json
+2026-03-26 18:35:29,946 INFO Saved -> data\bronze\github\contributors\torch_20260326_163506.json
+2026-03-26 18:35:31,745 INFO Saved -> data\bronze\github\events\events_20260326_163506.json
+2026-03-26 18:35:31,747 INFO ------------------------------------------------------------
+2026-03-26 18:35:31,747 INFO Run complete | success=8 errors=0
+2026-03-26 18:35:31,747 INFO ------------------------------------------------------------
