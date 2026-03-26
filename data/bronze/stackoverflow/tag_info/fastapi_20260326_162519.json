@@ -1,0 +1,21 @@
+{
+  "_ingested_at": "2026-03-26T16:26:18.019746+00:00",
+  "_source": "stackexchange_api_v2.3",
+  "_pypi_package": "fastapi",
+  "_so_tag": "fastapi",
+  "_endpoint": "https://api.stackexchange.com/2.3/tags/fastapi/info",
+  "data": {
+    "items": [
+      {
+        "has_synonyms": false,
+        "is_moderator_only": false,
+        "is_required": false,
+        "count": 7653,
+        "name": "fastapi"
+      }
+    ],
+    "has_more": false,
+    "quota_max": 10000,
+    "quota_remaining": 9979
+  }
+}

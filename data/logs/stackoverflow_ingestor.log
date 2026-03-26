@@ -74,3 +74,111 @@
 2026-03-23 17:45:14,735 INFO --------------------------------------------------------------------
 2026-03-23 17:45:14,745 INFO Run complete | success=8 errors=0
 2026-03-23 17:45:14,763 INFO ---------------------------------------------------------------------
+2026-03-26 18:25:19,429 INFO Stack Overflow Bronze ingestion started | run=20260326_162519
+2026-03-26 18:25:19,433 INFO [LOG] Processing: pandas
+2026-03-26 18:25:21,895 INFO Saved -> data\bronze\stackoverflow\tag_info\pandas_20260326_162519.json
+2026-03-26 18:25:24,397 INFO [pandas] questions page 1: 100 items
+2026-03-26 18:25:26,876 INFO [pandas] questions page 2: 100 items
+2026-03-26 18:25:29,398 INFO [pandas] questions page 3: 100 items
+2026-03-26 18:25:29,411 INFO Saved -> data\bronze\stackoverflow\questions\pandas_20260326_162519.json
+2026-03-26 18:25:31,960 INFO [pandas] answers batch 1 page 1: 100 items
+2026-03-26 18:25:34,478 INFO [pandas] answers batch 1 page 2: 100 items
+2026-03-26 18:25:36,964 INFO [pandas] answers batch 2 page 1: 100 items
+2026-03-26 18:25:39,500 INFO [pandas] answers batch 2 page 2: 100 items
+2026-03-26 18:25:41,978 INFO [pandas] answers batch 3 page 1: 100 items
+2026-03-26 18:25:44,479 INFO [pandas] answers batch 3 page 2: 100 items
+2026-03-26 18:25:44,504 INFO Saved -> data\bronze\stackoverflow\answers\pandas_20260326_162519.json
+2026-03-26 18:25:47,506 INFO [LOG] Processing: requests
+2026-03-26 18:25:49,863 INFO Saved -> data\bronze\stackoverflow\tag_info\requests_20260326_162519.json
+2026-03-26 18:25:52,342 INFO [requests] questions page 1: 100 items
+2026-03-26 18:25:54,866 INFO [requests] questions page 2: 100 items
+2026-03-26 18:25:57,372 INFO [requests] questions page 3: 100 items
+2026-03-26 18:25:57,391 INFO Saved -> data\bronze\stackoverflow\questions\requests_20260326_162519.json
+2026-03-26 18:25:59,892 INFO [requests] answers batch 1 page 1: 100 items
+2026-03-26 18:26:02,414 INFO [requests] answers batch 1 page 2: 100 items
+2026-03-26 18:26:04,920 INFO [requests] answers batch 2 page 1: 100 items
+2026-03-26 18:26:07,538 INFO [requests] answers batch 2 page 2: 100 items
+2026-03-26 18:26:10,094 INFO [requests] answers batch 3 page 1: 100 items
+2026-03-26 18:26:12,618 INFO [requests] answers batch 3 page 2: 100 items
+2026-03-26 18:26:12,646 INFO Saved -> data\bronze\stackoverflow\answers\requests_20260326_162519.json
+2026-03-26 18:26:15,649 INFO [LOG] Processing: fastapi
+2026-03-26 18:26:18,025 INFO Saved -> data\bronze\stackoverflow\tag_info\fastapi_20260326_162519.json
+2026-03-26 18:26:20,542 INFO [fastapi] questions page 1: 100 items
+2026-03-26 18:26:23,064 INFO [fastapi] questions page 2: 100 items
+2026-03-26 18:26:25,564 INFO [fastapi] questions page 3: 100 items
+2026-03-26 18:26:25,582 INFO Saved -> data\bronze\stackoverflow\questions\fastapi_20260326_162519.json
+2026-03-26 18:26:28,166 INFO [fastapi] answers batch 1 page 1: 100 items
+2026-03-26 18:26:31,247 INFO [fastapi] answers batch 1 page 2: 100 items
+2026-03-26 18:26:33,769 INFO [fastapi] answers batch 2 page 1: 100 items
+2026-03-26 18:26:36,323 INFO [fastapi] answers batch 2 page 2: 100 items
+2026-03-26 18:26:38,850 INFO [fastapi] answers batch 3 page 1: 100 items
+2026-03-26 18:26:41,382 INFO [fastapi] answers batch 3 page 2: 100 items
+2026-03-26 18:26:41,407 INFO Saved -> data\bronze\stackoverflow\answers\fastapi_20260326_162519.json
+2026-03-26 18:26:44,409 INFO [LOG] Processing: numpy
+2026-03-26 18:26:46,778 INFO Saved -> data\bronze\stackoverflow\tag_info\numpy_20260326_162519.json
+2026-03-26 18:26:49,340 INFO [numpy] questions page 1: 100 items
+2026-03-26 18:26:51,837 INFO [numpy] questions page 2: 100 items
+2026-03-26 18:26:54,308 INFO [numpy] questions page 3: 100 items
+2026-03-26 18:26:54,331 INFO Saved -> data\bronze\stackoverflow\questions\numpy_20260326_162519.json
+2026-03-26 18:26:56,804 INFO [numpy] answers batch 1 page 1: 100 items
+2026-03-26 18:26:59,281 INFO [numpy] answers batch 1 page 2: 100 items
+2026-03-26 18:27:01,791 INFO [numpy] answers batch 2 page 1: 100 items
+2026-03-26 18:27:04,294 INFO [numpy] answers batch 2 page 2: 100 items
+2026-03-26 18:27:07,094 INFO [numpy] answers batch 3 page 1: 100 items
+2026-03-26 18:27:09,625 INFO [numpy] answers batch 3 page 2: 100 items
+2026-03-26 18:27:09,649 INFO Saved -> data\bronze\stackoverflow\answers\numpy_20260326_162519.json
+2026-03-26 18:27:12,651 INFO [LOG] Processing: flask
+2026-03-26 18:27:15,016 INFO Saved -> data\bronze\stackoverflow\tag_info\flask_20260326_162519.json
+2026-03-26 18:27:17,512 INFO [flask] questions page 1: 100 items
+2026-03-26 18:27:20,295 INFO [flask] questions page 2: 100 items
+2026-03-26 18:27:22,795 INFO [flask] questions page 3: 100 items
+2026-03-26 18:27:22,821 INFO Saved -> data\bronze\stackoverflow\questions\flask_20260326_162519.json
+2026-03-26 18:27:25,313 INFO [flask] answers batch 1 page 1: 100 items
+2026-03-26 18:27:27,846 INFO [flask] answers batch 1 page 2: 100 items
+2026-03-26 18:27:30,384 INFO [flask] answers batch 2 page 1: 100 items
+2026-03-26 18:27:32,878 INFO [flask] answers batch 2 page 2: 100 items
+2026-03-26 18:27:35,419 INFO [flask] answers batch 3 page 1: 100 items
+2026-03-26 18:27:37,916 INFO [flask] answers batch 3 page 2: 100 items
+2026-03-26 18:27:37,940 INFO Saved -> data\bronze\stackoverflow\answers\flask_20260326_162519.json
+2026-03-26 18:27:40,942 INFO [LOG] Processing: django
+2026-03-26 18:27:43,314 INFO Saved -> data\bronze\stackoverflow\tag_info\django_20260326_162519.json
+2026-03-26 18:27:45,886 INFO [django] questions page 1: 100 items
+2026-03-26 18:27:48,394 INFO [django] questions page 2: 100 items
+2026-03-26 18:27:50,894 INFO [django] questions page 3: 100 items
+2026-03-26 18:27:50,911 INFO Saved -> data\bronze\stackoverflow\questions\django_20260326_162519.json
+2026-03-26 18:27:53,422 INFO [django] answers batch 1 page 1: 100 items
+2026-03-26 18:27:56,214 INFO [django] answers batch 1 page 2: 100 items
+2026-03-26 18:27:58,709 INFO [django] answers batch 2 page 1: 100 items
+2026-03-26 18:28:01,161 INFO [django] answers batch 2 page 2: 100 items
+2026-03-26 18:28:03,951 INFO [django] answers batch 3 page 1: 100 items
+2026-03-26 18:28:06,744 INFO [django] answers batch 3 page 2: 100 items
+2026-03-26 18:28:06,762 INFO Saved -> data\bronze\stackoverflow\answers\django_20260326_162519.json
+2026-03-26 18:28:09,764 INFO [LOG] Processing: scikit-learn
+2026-03-26 18:28:12,124 INFO Saved -> data\bronze\stackoverflow\tag_info\scikit-learn_20260326_162519.json
+2026-03-26 18:28:14,619 INFO [scikit-learn] questions page 1: 100 items
+2026-03-26 18:28:17,129 INFO [scikit-learn] questions page 2: 100 items
+2026-03-26 18:28:19,619 INFO [scikit-learn] questions page 3: 100 items
+2026-03-26 18:28:19,638 INFO Saved -> data\bronze\stackoverflow\questions\scikit-learn_20260326_162519.json
+2026-03-26 18:28:22,179 INFO [scikit-learn] answers batch 1 page 1: 100 items
+2026-03-26 18:28:24,718 INFO [scikit-learn] answers batch 1 page 2: 100 items
+2026-03-26 18:28:27,208 INFO [scikit-learn] answers batch 2 page 1: 100 items
+2026-03-26 18:28:29,728 INFO [scikit-learn] answers batch 2 page 2: 100 items
+2026-03-26 18:28:32,226 INFO [scikit-learn] answers batch 3 page 1: 100 items
+2026-03-26 18:28:34,722 INFO [scikit-learn] answers batch 3 page 2: 100 items
+2026-03-26 18:28:34,739 INFO Saved -> data\bronze\stackoverflow\answers\scikit-learn_20260326_162519.json
+2026-03-26 18:28:37,740 INFO [LOG] Processing: torch
+2026-03-26 18:28:40,080 INFO Saved -> data\bronze\stackoverflow\tag_info\torch_20260326_162519.json
+2026-03-26 18:28:42,573 INFO [torch] questions page 1: 100 items
+2026-03-26 18:28:45,366 INFO [torch] questions page 2: 100 items
+2026-03-26 18:28:47,898 INFO [torch] questions page 3: 100 items
+2026-03-26 18:28:47,923 INFO Saved -> data\bronze\stackoverflow\questions\torch_20260326_162519.json
+2026-03-26 18:28:50,415 INFO [torch] answers batch 1 page 1: 100 items
+2026-03-26 18:28:52,902 INFO [torch] answers batch 1 page 2: 100 items
+2026-03-26 18:28:55,396 INFO [torch] answers batch 2 page 1: 100 items
+2026-03-26 18:28:58,039 INFO [torch] answers batch 2 page 2: 100 items
+2026-03-26 18:29:00,551 INFO [torch] answers batch 3 page 1: 100 items
+2026-03-26 18:29:03,053 INFO [torch] answers batch 3 page 2: 100 items
+2026-03-26 18:29:03,076 INFO Saved -> data\bronze\stackoverflow\answers\torch_20260326_162519.json
+2026-03-26 18:29:06,078 INFO --------------------------------------------------------------------
+2026-03-26 18:29:06,078 INFO Run complete | success=8 errors=0
+2026-03-26 18:29:06,079 INFO ---------------------------------------------------------------------

@@ -1,0 +1,21 @@
+{
+  "_ingested_at": "2026-03-26T16:28:12.119022+00:00",
+  "_source": "stackexchange_api_v2.3",
+  "_pypi_package": "scikit-learn",
+  "_so_tag": "scikit-learn",
+  "_endpoint": "https://api.stackexchange.com/2.3/tags/scikit-learn/info",
+  "data": {
+    "items": [
+      {
+        "has_synonyms": true,
+        "is_moderator_only": false,
+        "is_required": false,
+        "count": 28319,
+        "name": "scikit-learn"
+      }
+    ],
+    "has_more": false,
+    "quota_max": 10000,
+    "quota_remaining": 9939
+  }
+}

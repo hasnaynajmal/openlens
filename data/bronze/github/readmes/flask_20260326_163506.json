@@ -1,0 +1,25 @@
+{
+  "_ingested_at": "2026-03-26T16:35:20.509358+00:00",
+  "_source": "github_rest_api",
+  "_pypi_package": "flask",
+  "_endpoint": "https://api.github.com/repos/pallets/flask/readme",
+  "raw_api_response": {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "64f56cac4f9d60020a39b9c2f803b1846796cf6d",
+    "size": 1639,
+    "url": "https://api.github.com/repos/pallets/flask/contents/README.md?ref=main",
+    "html_url": "https://github.com/pallets/flask/blob/main/README.md",
+    "git_url": "https://api.github.com/repos/pallets/flask/git/blobs/64f56cac4f9d60020a39b9c2f803b1846796cf6d",
+    "download_url": "https://raw.githubusercontent.com/pallets/flask/main/README.md",
+    "type": "file",
+    "content": "PGRpdiBhbGlnbj0iY2VudGVyIj48aW1nIHNyYz0iaHR0cHM6Ly9yYXcuZ2l0\naHVidXNlcmNvbnRlbnQuY29tL3BhbGxldHMvZmxhc2svcmVmcy9oZWFkcy9z\ndGFibGUvZG9jcy9fc3RhdGljL2ZsYXNrLW5hbWUuc3ZnIiBhbHQ9IiIgaGVp\nZ2h0PSIxNTAiPjwvZGl2PgoKIyBGbGFzawoKRmxhc2sgaXMgYSBsaWdodHdl\naWdodCBbV1NHSV0gd2ViIGFwcGxpY2F0aW9uIGZyYW1ld29yay4gSXQgaXMg\nZGVzaWduZWQKdG8gbWFrZSBnZXR0aW5nIHN0YXJ0ZWQgcXVpY2sgYW5kIGVh\nc3ksIHdpdGggdGhlIGFiaWxpdHkgdG8gc2NhbGUgdXAgdG8KY29tcGxleCBh\ncHBsaWNhdGlvbnMuIEl0IGJlZ2FuIGFzIGEgc2ltcGxlIHdyYXBwZXIgYXJv\ndW5kIFtXZXJremV1Z10KYW5kIFtKaW5qYV0sIGFuZCBoYXMgYmVjb21lIG9u\nZSBvZiB0aGUgbW9zdCBwb3B1bGFyIFB5dGhvbiB3ZWIKYXBwbGljYXRpb24g\nZnJhbWV3b3Jrcy4KCkZsYXNrIG9mZmVycyBzdWdnZXN0aW9ucywgYnV0IGRv\nZXNuJ3QgZW5mb3JjZSBhbnkgZGVwZW5kZW5jaWVzIG9yCnByb2plY3QgbGF5\nb3V0LiBJdCBpcyB1cCB0byB0aGUgZGV2ZWxvcGVyIHRvIGNob29zZSB0aGUg\ndG9vbHMgYW5kCmxpYnJhcmllcyB0aGV5IHdhbnQgdG8gdXNlLiBUaGVyZSBh\ncmUgbWFueSBleHRlbnNpb25zIHByb3ZpZGVkIGJ5IHRoZQpjb21tdW5pdHkg\ndGhhdCBtYWtlIGFkZGluZyBuZXcgZnVuY3Rpb25hbGl0eSBlYXN5LgoKW1dT\nR0ldOiBodHRwczovL3dzZ2kucmVhZHRoZWRvY3MuaW8vCltXZXJremV1Z106\nIGh0dHBzOi8vd2Vya3pldWcucGFsbGV0c3Byb2plY3RzLmNvbS8KW0ppbmph\nXTogaHR0cHM6Ly9qaW5qYS5wYWxsZXRzcHJvamVjdHMuY29tLwoKIyMgQSBT\naW1wbGUgRXhhbXBsZQoKYGBgcHl0aG9uCiMgc2F2ZSB0aGlzIGFzIGFwcC5w\neQpmcm9tIGZsYXNrIGltcG9ydCBGbGFzawoKYXBwID0gRmxhc2soX19uYW1l\nX18pCgpAYXBwLnJvdXRlKCIvIikKZGVmIGhlbGxvKCk6CiAgICByZXR1cm4g\nIkhlbGxvLCBXb3JsZCEiCmBgYAoKYGBgCiQgZmxhc2sgcnVuCiAgKiBSdW5u\naW5nIG9uIGh0dHA6Ly8xMjcuMC4wLjE6NTAwMC8gKFByZXNzIENUUkwrQyB0\nbyBxdWl0KQpgYGAKCiMjIERvbmF0ZQoKVGhlIFBhbGxldHMgb3JnYW5pemF0\naW9uIGRldmVsb3BzIGFuZCBzdXBwb3J0cyBGbGFzayBhbmQgdGhlIGxpYnJh\ncmllcwppdCB1c2VzLiBJbiBvcmRlciB0byBncm93IHRoZSBjb21tdW5pdHkg\nb2YgY29udHJpYnV0b3JzIGFuZCB1c2VycywgYW5kCmFsbG93IHRoZSBtYWlu\ndGFpbmVycyB0byBkZXZvdGUgbW9yZSB0aW1lIHRvIHRoZSBwcm9qZWN0cywg\nW3BsZWFzZQpkb25hdGUgdG9kYXldLgoKW3BsZWFzZSBkb25hdGUgdG9kYXld\nOiBodHRwczovL3BhbGxldHNwcm9qZWN0cy5jb20vZG9uYXRlCgojIyBDb250\ncmlidXRpbmcKClNlZSBvdXIgW2RldGFpbGVkIGNvbnRyaWJ1dGluZyBkb2N1\nbWVudGF0aW9uXVtjb250cmliXSBmb3IgbWFueSB3YXlzIHRvCmNvbnRyaWJ1\ndGUsIGluY2x1ZGluZyByZXBvcnRpbmcgaXNzdWVzLCByZXF1ZXN0aW5nIGZl\nYXR1cmVzLCBhc2tpbmcgb3IgYW5zd2VyaW5nCnF1ZXN0aW9ucywgYW5kIG1h\na2luZyBQUnMuCgpbY29udHJpYl06IGh0dHBzOi8vcGFsbGV0c3Byb2plY3Rz\nLmNvbS9jb250cmlidXRpbmcvCg==\n",
+    "encoding": "base64",
+    "_links": {
+      "self": "https://api.github.com/repos/pallets/flask/contents/README.md?ref=main",
+      "git": "https://api.github.com/repos/pallets/flask/git/blobs/64f56cac4f9d60020a39b9c2f803b1846796cf6d",
+      "html": "https://github.com/pallets/flask/blob/main/README.md"
+    }
+  },
+  "readme_text": "<div align=\"center\"><img src=\"https://raw.githubusercontent.com/pallets/flask/refs/heads/stable/docs/_static/flask-name.svg\" alt=\"\" height=\"150\"></div>\n\n# Flask\n\nFlask is a lightweight [WSGI] web application framework. It is designed\nto make getting started quick and easy, with the ability to scale up to\ncomplex applications. It began as a simple wrapper around [Werkzeug]\nand [Jinja], and has become one of the most popular Python web\napplication frameworks.\n\nFlask offers suggestions, but doesn't enforce any dependencies or\nproject layout. It is up to the developer to choose the tools and\nlibraries they want to use. There are many extensions provided by the\ncommunity that make adding new functionality easy.\n\n[WSGI]: https://wsgi.readthedocs.io/\n[Werkzeug]: https://werkzeug.palletsprojects.com/\n[Jinja]: https://jinja.palletsprojects.com/\n\n## A Simple Example\n\n```python\n# save this as app.py\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello():\n    return \"Hello, World!\"\n```\n\n```\n$ flask run\n  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)\n```\n\n## Donate\n\nThe Pallets organization develops and supports Flask and the libraries\nit uses. In order to grow the community of contributors and users, and\nallow the maintainers to devote more time to the projects, [please\ndonate today].\n\n[please donate today]: https://palletsprojects.com/donate\n\n## Contributing\n\nSee our [detailed contributing documentation][contrib] for many ways to\ncontribute, including reporting issues, requesting features, asking or answering\nquestions, and making PRs.\n\n[contrib]: https://palletsprojects.com/contributing/\n"
+}
