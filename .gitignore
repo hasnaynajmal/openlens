@@ -13,6 +13,10 @@ dist/
 build/
 *.out
 
+*.pyc
+__pycache__/
+__init__.py
+
 # IDE and editor files
 .vscode/
 .idea/
