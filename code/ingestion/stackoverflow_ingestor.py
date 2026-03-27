@@ -100,7 +100,7 @@ def _save(subfolder: str, filename: str, data: dict):
 
 
 # Ingestion functions
-def ingest_questions(pkg: dict, date_stamp: str, pages: int = 3):
+def ingest_questions(pkg: dict, pages: int = 3):
     """
     Fetch questions tagged with this package's SO tag.
     Fetches up to 300 questions sorted by votes.
@@ -150,7 +150,7 @@ def ingest_questions(pkg: dict, date_stamp: str, pages: int = 3):
             "questions":      all_questions,
         }
 
-        filename = f"{pypi}_{date_stamp}.json"
+        filename = f"{pypi}.json"
         filepath = _save("questions", filename, envelope)
 
         answered = sum(1 for q in all_questions if q.get("is_answered"))
@@ -165,7 +165,7 @@ def ingest_questions(pkg: dict, date_stamp: str, pages: int = 3):
     return question_ids
 
 
-def ingest_answers(pkg: dict, date_stamp: str, question_ids: list,
+def ingest_answers(pkg: dict, question_ids: list,
                    max_pages_per_batch: int = 2):
     """
     Fetch answers for specific questions using /questions/{ids}/answers.
@@ -230,7 +230,7 @@ def ingest_answers(pkg: dict, date_stamp: str, question_ids: list,
             "answers":             all_answers,
         }
 
-        filename = f"{pypi}_{date_stamp}.json"
+        filename = f"{pypi}.json"
         filepath = _save("answers", filename, envelope)
 
         avg_score = (
@@ -245,7 +245,7 @@ def ingest_answers(pkg: dict, date_stamp: str, question_ids: list,
         })
 
 
-def ingest_tag_info(pkg: dict, date_stamp: str):
+def ingest_tag_info(pkg: dict):
     """
     Fetch metadata about the SO tag — total question count, synonyms.
     Small structured payload, no pagination needed.
@@ -265,7 +265,7 @@ def ingest_tag_info(pkg: dict, date_stamp: str):
             "data":          data,
         }
 
-        filename = f"{pypi}_{date_stamp}.json"
+        filename = f"{pypi}.json"
         filepath = _save("tag_info", filename, envelope)
 
         items = data.get("items", [{}])
@@ -283,8 +283,8 @@ def ingest_tag_info(pkg: dict, date_stamp: str):
 
 # Main
 def run():
-    date_stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-    logger.info(f"Stack Overflow Bronze ingestion started | run={date_stamp}")
+    run_ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    logger.info(f"Stack Overflow Bronze ingestion started | run={run_ts}")
 
     stats = {"success": 0, "error": 0}
 
@@ -293,9 +293,9 @@ def run():
         logger.info(f"[LOG] Processing: {pypi}")
 
         try:
-            ingest_tag_info(pkg, date_stamp)
-            question_ids = ingest_questions(pkg, date_stamp, pages=3)
-            ingest_answers(pkg, date_stamp, question_ids=question_ids)
+            ingest_tag_info(pkg)
+            question_ids = ingest_questions(pkg, pages=3)
+            ingest_answers(pkg, question_ids=question_ids)
             stats["success"] += 1
         except Exception as e:
             logger.error(f"[{pypi}] unexpected error: {e}")
