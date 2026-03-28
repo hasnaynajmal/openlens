@@ -56,7 +56,7 @@ with st.sidebar:
         h = api_health()
         st.success(f"API online · {h['packages_cached']} packages cached")
     except Exception:
-        st.error("API offline — start uvicorn first")
+        st.error("API offline — Will be online in a few seconds, please refresh")
 
 # ── load data ─────────────────────────────────────────────────────────────────
 @st.cache_data(ttl=300)

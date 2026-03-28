@@ -6,7 +6,7 @@ _BASE = os.getenv("OPENLENS_API_URL", "http://127.0.0.1:8000")
 
 
 def _get(path: str) -> dict | list:
-    resp = requests.get(f"{_BASE}{path}", timeout=10)
+    resp = requests.get(f"{_BASE}{path}", timeout=60)
     resp.raise_for_status()
     return resp.json()
 
